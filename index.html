@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franklin Mutuma — Software Developer & GIS Engineer</title>
+  <meta name="description" content="Franklin Mutuma is a software developer, GIS engineer, and environmental tech consultant based in Kenya, building web platforms, Android apps, and data systems." />
+  <meta name="keywords" content="Franklin Mutuma, software developer, Laravel, Kotlin, GIS, Kenya, web development, Android, M-Pesa, water tech" />
+  <meta name="author" content="Franklin Mutuma" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Franklin Mutuma — Software Developer & GIS Engineer" />
+  <meta property="og:description" content="Software developer building web platforms, Android apps, and GIS data systems in Kenya." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://promutuma.github.io" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@framutuma" />
+  <meta name="twitter:title" content="Franklin Mutuma — Software Developer & GIS Engineer" />
+  <meta name="twitter:description" content="Software developer building web platforms, Android apps, and GIS data systems in Kenya." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #060b18;
+      --bg-card:     #0d1526;
+      --border:      #1a2744;
+      --cyan:        #06b6d4;
+      --cyan-dim:    rgba(6,182,212,0.12);
+      --orange:      #f97316;
+      --green:       #22c55e;
+      --purple:      #a855f7;
+      --text:        #e2e8f0;
+      --text-dim:    #94a3b8;
+      --text-muted:  #64748b;
+      --radius:      12px;
+      --font:        'Segoe UI', system-ui, -apple-system, sans-serif;
+      --mono:        'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--cyan); text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.8; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      background: rgba(6,11,24,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); opacity: 1; }
+
+    .nav-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* ── HERO ────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(6,182,212,0.09) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-content { max-width: 740px; text-align: center; }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      letter-spacing: 0.12em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: '';
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: var(--cyan);
+      opacity: 0.4;
+    }
+
+    .hero-name {
+      font-size: clamp(2.6rem, 7vw, 4.75rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+    .hero-name span { color: var(--cyan); }
+
+    .hero-title {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title strong { color: var(--orange); font-weight: 600; }
+
+    .hero-bio {
+      color: var(--text-dim);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--cyan);
+      color: #000;
+      border: 2px solid var(--cyan);
+    }
+    .btn-primary:hover { background: transparent; color: var(--cyan); opacity: 1; }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 2px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); opacity: 1; }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cyan);
+      font-family: var(--mono);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.3rem;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      animation: bounce 2.2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+
+    /* ── SECTIONS ────────────────────────────────── */
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-header { margin-bottom: 3rem; }
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--cyan);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .section-title span { color: var(--cyan); }
+
+    /* ── ABOUT ───────────────────────────────────── */
+    #about {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-dim);
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
+
+    .highlight-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: border-color 0.2s;
+    }
+    .highlight-card:hover { border-color: var(--cyan); }
+    .highlight-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .highlight-card h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .highlight-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* ── SKILLS ──────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .skill-category:hover { border-color: var(--cyan); }
+
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .skill-cat-icon { font-size: 1.2rem; }
+    .skill-cat-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-dim);
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .skill-tag {
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      border: 1px solid rgba(6,182,212,0.22);
+      border-radius: 6px;
+      padding: 0.25rem 0.7rem;
+      font-size: 0.77rem;
+      font-weight: 500;
+      font-family: var(--mono);
+    }
+
+    /* ── PROJECTS ────────────────────────────────── */
+    #projects {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .project-card:hover { border-color: var(--cyan); transform: translateY(-3px); }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .project-icon { font-size: 1.9rem; line-height: 1; }
+
+    .project-badges { display: flex; gap: 0.4rem; align-items: center; }
+
+    .project-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+    .cat-web    { background: rgba(249,115,22,0.13); color: var(--orange); }
+    .cat-mobile { background: rgba(34,197,94,0.13);  color: var(--green);  }
+    .cat-gis    { background: rgba(6,182,212,0.13);  color: var(--cyan);   }
+    .cat-iot    { background: rgba(168,85,247,0.13); color: var(--purple); }
+
+    .project-ext-link {
+      color: var(--text-muted);
+      font-size: 1rem;
+      padding: 0.2rem;
+      transition: color 0.2s;
+    }
+    .project-ext-link:hover { color: var(--cyan); opacity: 1; }
+
+    .project-name { font-size: 1rem; font-weight: 700; }
+
+    .project-desc {
+      font-size: 0.855rem;
+      color: var(--text-dim);
+      line-height: 1.72;
+      flex: 1;
+    }
+
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tech-tag {
+      background: rgba(15,23,42,0.8);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 4px;
+      padding: 0.18rem 0.55rem;
+      font-size: 0.7rem;
+      font-family: var(--mono);
+    }
+
+    /* ── CONTACT ─────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-intro {
+      color: var(--text-dim);
+      line-height: 1.82;
+      margin-bottom: 2rem;
+      font-size: 0.975rem;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .contact-link-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+    .contact-link-item:hover { border-color: var(--cyan); opacity: 1; }
+    .contact-link-icon { font-size: 1.1rem; width: 1.5rem; text-align: center; }
+    .contact-link-label { font-size: 0.73rem; color: var(--text-muted); }
+    .contact-link-value { font-size: 0.875rem; font-weight: 500; }
+
+    .availability {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .avail-header { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 0.9rem; }
+
+    .availability-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+      animation: pulse-green 2s ease-in-out infinite;
+    }
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 0   rgba(34,197,94,0.5); }
+      50%       { box-shadow: 0 0 0 6px rgba(34,197,94,0);   }
+    }
+    .availability p { font-size: 0.82rem; color: var(--text-dim); margin-top: 0.6rem; line-height: 1.6; }
+
+    .contact-side-title { font-size: 0.85rem; font-weight: 700; color: var(--text-dim); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .social-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 1.1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .social-btn:hover { border-color: var(--cyan); color: var(--cyan); opacity: 1; }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo { font-family: var(--mono); color: var(--cyan); font-size: 0.875rem; }
+    .footer-copy { font-size: 0.775rem; color: var(--text-muted); }
+    .footer-nav { display: flex; gap: 1.5rem; }
+    .footer-nav a { font-size: 0.775rem; color: var(--text-muted); }
+    .footer-nav a:hover { color: var(--cyan); }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; left: 0; right: 0;
+        background: var(--bg-card);
+        border-bottom: 1px solid var(--border);
+        padding: 1.25rem 1.5rem;
+        gap: 1.1rem;
+      }
+      .nav-menu-btn { display: block; }
+      .about-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-stats { gap: 1.5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">fm.dev</span>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Based in Kenya</p>
+    <h1 class="hero-name">Franklin <span>Mutuma</span></h1>
+    <p class="hero-title">
+      Software Developer &middot; GIS Engineer &middot; <strong>Environmental Tech</strong>
+    </p>
+    <p class="hero-bio">
+      I build web platforms, Android apps, and data infrastructure for water resources,
+      conservation, and agribusiness &mdash; specializing in Laravel, Kotlin, and spatial data systems.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Projects Shipped</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Counties Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Tech Domains</div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-hint" aria-label="Scroll down">
+    <span>scroll</span>
+    <span>&#8595;</span>
+  </a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">// about me</p>
+      <h2 class="section-title">Building tech at the intersection of<br><span>code, data &amp; environment</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm Franklin Mutuma, a software developer and GIS engineer based in Kenya, working across
+          the water resources, wildlife conservation, and agribusiness sectors. My work spans
+          full-stack web development, Android application engineering, and spatial data infrastructure.
+        </p>
+        <p>
+          As the founder of <strong>Eelam Innovations</strong>, I develop technology solutions
+          for organizations like CETRAD, Mikam Water, and community conservation projects across
+          Meru, Isiolo, Samburu, and Laikipia counties.
+        </p>
+        <p>
+          I have hands-on field experience deploying IoT smart water meters, setting up GIS pipelines
+          with GeoNode and PostgreSQL, and building Android apps with Gemini AI and M-Pesa integrations
+          &mdash; from field installation to production deployment.
+        </p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">🌊</div>
+          <div>
+            <h4>Water Resources Tech</h4>
+            <p>Smart meter data platforms, borehole monitoring, and utility management systems for Kenyan water utilities.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🗺️</div>
+          <div>
+            <h4>GIS &amp; Spatial Data</h4>
+            <p>End-to-end GIS pipelines using ODK, PostgreSQL/PostGIS, GeoNode, QGIS, and Power BI for environmental research.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">📱</div>
+          <div>
+            <h4>Android &amp; AI Apps</h4>
+            <p>Kotlin/Jetpack Compose apps with Gemini AI, M-Pesa Daraja API, and offline-first architecture for Kenyan users.</p>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🌿</div>
+          <div>
+            <h4>Conservation Field Tech</h4>
+            <p>Camera trap deployments, wildlife monitoring systems, and community data collection across ASAL regions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">// tech stack</p>
+      <h2 class="section-title">Skills &amp; <span>Technologies</span></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">💻</span>
+          <span class="skill-cat-title">Languages</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">Bash</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">🏗️</span>
+          <span class="skill-cat-title">Frameworks &amp; Platforms</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Laravel</span>
+          <span class="skill-tag">CodeIgniter 4</span>
+          <span class="skill-tag">Jetpack Compose</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Filament</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">🗄️</span>
+          <span class="skill-cat-title">Databases</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">PostGIS</span>
+          <span class="skill-tag">SQLite</span>
+          <span class="skill-tag">Room DB</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">🗺️</span>
+          <span class="skill-cat-title">GIS &amp; Data</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">QGIS</span>
+          <span class="skill-tag">ArcGIS Pro</span>
+          <span class="skill-tag">GeoNode</span>
+          <span class="skill-tag">GeoServer</span>
+          <span class="skill-tag">ODK</span>
+          <span class="skill-tag">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">☁️</span>
+          <span class="skill-cat-title">Cloud &amp; Infrastructure</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Linux Server</span>
+          <span class="skill-tag">Cloudflare Tunnel</span>
+          <span class="skill-tag">GitHub Pages</span>
+          <span class="skill-tag">Apache</span>
+          <span class="skill-tag">Nginx</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-header">
+          <span class="skill-cat-icon">🔗</span>
+          <span class="skill-cat-title">Integrations &amp; APIs</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">M-Pesa/Daraja</span>
+          <span class="skill-tag">Gemini AI</span>
+          <span class="skill-tag">Google OAuth</span>
+          <span class="skill-tag">UDP/IoT</span>
+          <span class="skill-tag">GiveWP</span>
+          <span class="skill-tag">REST APIs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">// portfolio</p>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🚰</div>
+          <div class="project-badges">
+            <span class="project-category cat-iot">IoT</span>
+            <a href="https://mikamwater.co.ke" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit Mikam Water">&#8599;</a>
+          </div>
+        </div>
+        <div class="project-name">Mikam Water Platform</div>
+        <div class="project-desc">
+          Full-stack platform managing smart 4G cellular water meter data for a Kenyan utility.
+          Includes a UDP server that receives meter readings in real time, processes them,
+          and exposes JSON APIs. Features billing, consumption dashboards, and admin controls.
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">UDP Server</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">IoT</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🏠</div>
+          <div class="project-badges">
+            <span class="project-category cat-mobile">Android</span>
+          </div>
+        </div>
+        <div class="project-name">NyumbaHub</div>
+        <div class="project-desc">
+          AI-powered rental marketplace for Kenya, submitted to the Google Build with Gemini XPRIZE.
+          Gemini AI agent for property matching, M-Pesa/Daraja payments, landlord/tenant portals,
+          and an offline-first architecture for low-connectivity environments.
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Kotlin</span>
+          <span class="tech-tag">Jetpack Compose</span>
+          <span class="tech-tag">Gemini AI</span>
+          <span class="tech-tag">M-Pesa</span>
+          <span class="tech-tag">Android</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🛒</div>
+          <div class="project-badges">
+            <span class="project-category cat-mobile">Android</span>
+          </div>
+        </div>
+        <div class="project-name">Kangai Shop</div>
+        <div class="project-desc">
+          Android retail management app for a small Kenyan shop. Handles daily milk delivery
+          tracking, customer and supplier ledger management, SMS notifications, and sales
+          reporting &mdash; built for low-connectivity rural environments.
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Kotlin</span>
+          <span class="tech-tag">Jetpack Compose</span>
+          <span class="tech-tag">Room DB</span>
+          <span class="tech-tag">SMS API</span>
+          <span class="tech-tag">Android</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🌐</div>
+          <div class="project-badges">
+            <span class="project-category cat-web">Web</span>
+            <a href="https://cetrad.org" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit CETRAD">&#8599;</a>
+          </div>
+        </div>
+        <div class="project-name">CETRAD Web &amp; Brand Suite</div>
+        <div class="project-desc">
+          Complete brand and digital overhaul for CETRAD &mdash; 8-page WCAG-compliant website,
+          WordPress theme, newsletter plugin, HTML email signature, letterhead, and PowerPoint template.
+          Design system built on Brand Guidelines v1.0 (cyan/orange/green palette).
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">WordPress</span>
+          <span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">WCAG 2.1</span>
+          <span class="tech-tag">UI/UX Design</span>
+          <span class="tech-tag">PHP</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">📷</div>
+          <div class="project-badges">
+            <span class="project-category cat-gis">GIS</span>
+          </div>
+        </div>
+        <div class="project-name">WildlifeID Pro</div>
+        <div class="project-desc">
+          Camera trap analysis platform for CETRAD's Gambella Wetland Landscape Baseline Survey.
+          Ecological indicator dashboards, human-in-the-loop species review, batch image processing,
+          and cross-platform packaging for field researchers.
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">Field Data</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🗺️</div>
+          <div class="project-badges">
+            <span class="project-category cat-gis">GIS</span>
+          </div>
+        </div>
+        <div class="project-name">GIS Data Infrastructure</div>
+        <div class="project-desc">
+          End-to-end spatial data pipeline for the Water-Energy-Food Nexus project (Stockholm
+          Environment Institute &amp; CETRAD). ODK collection &rarr; PostgreSQL/PostGIS &rarr;
+          GeoNode publishing &rarr; QGIS analysis &rarr; Power BI dashboards, served securely
+          via Cloudflare Tunnel.
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">PostgreSQL/PostGIS</span>
+          <span class="tech-tag">GeoNode</span>
+          <span class="tech-tag">QGIS</span>
+          <span class="tech-tag">ODK</span>
+          <span class="tech-tag">Power BI</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">💳</div>
+          <div class="project-badges">
+            <span class="project-category cat-web">Web</span>
+          </div>
+        </div>
+        <div class="project-name">M-Pesa Integration Library</div>
+        <div class="project-desc">
+          Reusable M-Pesa/Daraja STK Push library for Laravel and CodeIgniter 4. Supports both the
+          GiveWP Visual Form Builder and the legacy Option-Based editor. Used in production at
+          lululight.org for charitable donation processing.
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">CodeIgniter 4</span>
+          <span class="tech-tag">M-Pesa Daraja</span>
+          <span class="tech-tag">GiveWP</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🏢</div>
+          <div class="project-badges">
+            <span class="project-category cat-web">Web</span>
+            <a href="https://eelam.co.ke" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit Eelam">&#8599;</a>
+          </div>
+        </div>
+        <div class="project-name">Eelam Innovations Platform</div>
+        <div class="project-desc">
+          Corporate web platform with separate client, employee, and admin portals.
+          Features payment gateway integration (M-Pesa + PayPal), subscription and service
+          package management, pricing comparison tools, and testimonial management.
+        </div>
+        <div class="project-tech">
+          <span class="tech-tag">Laravel 12</span>
+          <span class="tech-tag">Filament</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">M-Pesa</span>
+          <span class="tech-tag">PayPal</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-tag">// get in touch</p>
+      <h2 class="section-title">Let's <span>Connect</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-intro">
+          I'm open to freelance projects, consulting engagements, and collaborations &mdash;
+          especially in water tech, environmental data systems, and mobile app development in Kenya.
+          Feel free to reach out via any of the channels below.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:framutuma@gmail.com" class="contact-link-item">
+            <span class="contact-link-icon">✉️</span>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-value">framutuma@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/framutuma/" class="contact-link-item" target="_blank" rel="noopener">
+            <span class="contact-link-icon">💼</span>
+            <div>
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-value">linkedin.com/in/framutuma</div>
+            </div>
+          </a>
+          <a href="https://github.com/promutuma" class="contact-link-item" target="_blank" rel="noopener">
+            <span class="contact-link-icon">🐙</span>
+            <div>
+              <div class="contact-link-label">GitHub</div>
+              <div class="contact-link-value">github.com/promutuma</div>
+            </div>
+          </a>
+          <a href="https://twitter.com/framutuma" class="contact-link-item" target="_blank" rel="noopener">
+            <span class="contact-link-icon">🐦</span>
+            <div>
+              <div class="contact-link-label">Twitter / X</div>
+              <div class="contact-link-value">@framutuma</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="availability">
+          <div class="avail-header">
+            <span class="availability-dot"></span>
+            Available for new projects
+          </div>
+          <p>
+            Currently based in Kenya. Available for remote and on-site engagements across East Africa.
+            Specializing in Laravel backends, Android apps, and GIS data systems.
+          </p>
+        </div>
+        <p class="contact-side-title">Find me on</p>
+        <div class="social-row">
+          <a href="https://github.com/promutuma" class="social-btn" target="_blank" rel="noopener">🐙 GitHub</a>
+          <a href="https://www.linkedin.com/in/framutuma/" class="social-btn" target="_blank" rel="noopener">💼 LinkedIn</a>
+          <a href="https://twitter.com/framutuma" class="social-btn" target="_blank" rel="noopener">🐦 Twitter</a>
+          <a href="https://eelam.co.ke" class="social-btn" target="_blank" rel="noopener">🌐 Eelam.co.ke</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Franklin Mutuma</span>
+    <span class="footer-copy">&copy; 2026 &middot; Built with HTML &amp; CSS &middot; Hosted on GitHub Pages</span>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('menuBtn');
+  var links = document.getElementById('navLinks');
+  btn.addEventListener('click', function () { links.classList.toggle('open'); });
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function () { links.classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
