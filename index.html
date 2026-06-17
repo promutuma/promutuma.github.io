@@ -20,8 +20,11 @@
   <meta name="twitter:title" content="Franklin Mutuma — Software Developer & GIS Engineer" />
   <meta name="twitter:description" content="Software developer building web platforms, Android apps, and GIS data systems in Kenya." />
 
+  <!-- Google Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306b6d4'/><text x='50' y='68' font-family='sans-serif' font-size='52' font-weight='800' fill='%23000' text-anchor='middle'>FM</text></svg>" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -297,7 +300,15 @@
       transition: border-color 0.2s;
     }
     .highlight-card:hover { border-color: var(--cyan); }
-    .highlight-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .material-symbols-outlined {
+      font-size: inherit;
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      vertical-align: middle;
+      user-select: none;
+      display: inline-block;
+    }
+    .highlight-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 0.1rem; color: var(--cyan); }
     .highlight-card h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.3rem; }
     .highlight-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
 
@@ -323,7 +334,7 @@
       gap: 0.75rem;
       margin-bottom: 1.25rem;
     }
-    .skill-cat-icon { font-size: 1.2rem; }
+    .skill-cat-icon { font-size: 1.25rem; color: var(--cyan); }
     .skill-cat-title {
       font-size: 0.78rem;
       font-weight: 700;
@@ -375,7 +386,7 @@
       justify-content: space-between;
       gap: 1rem;
     }
-    .project-icon { font-size: 1.9rem; line-height: 1; }
+    .project-icon { font-size: 2rem; line-height: 1; color: var(--cyan); }
 
     .project-badges { display: flex; gap: 0.4rem; align-items: center; }
 
@@ -449,7 +460,7 @@
       transition: border-color 0.2s;
     }
     .contact-link-item:hover { border-color: var(--cyan); opacity: 1; }
-    .contact-link-icon { font-size: 1.1rem; width: 1.5rem; text-align: center; }
+    .contact-link-icon { font-size: 1.25rem; width: 1.5rem; text-align: center; color: var(--cyan); }
     .contact-link-label { font-size: 0.73rem; color: var(--text-muted); }
     .contact-link-value { font-size: 0.875rem; font-weight: 500; }
 
@@ -548,7 +559,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu"><span class="material-symbols-outlined">menu</span></button>
 </nav>
 
 <!-- HERO -->
@@ -588,7 +599,7 @@
   </div>
   <a href="#about" class="scroll-hint" aria-label="Scroll down">
     <span>scroll</span>
-    <span>&#8595;</span>
+    <span class="material-symbols-outlined" style="font-size:20px">keyboard_arrow_down</span>
   </a>
 </section>
 
@@ -619,28 +630,28 @@
       </div>
       <div class="about-highlights">
         <div class="highlight-card">
-          <div class="highlight-icon">🌊</div>
+          <div class="highlight-icon"><span class="material-symbols-outlined">water_drop</span></div>
           <div>
             <h4>Water Resources Tech</h4>
             <p>Smart meter data platforms, borehole monitoring, and utility management systems for Kenyan water utilities.</p>
           </div>
         </div>
         <div class="highlight-card">
-          <div class="highlight-icon">🗺️</div>
+          <div class="highlight-icon"><span class="material-symbols-outlined">map</span></div>
           <div>
             <h4>GIS &amp; Spatial Data</h4>
             <p>End-to-end GIS pipelines using ODK, PostgreSQL/PostGIS, GeoNode, QGIS, and Power BI for environmental research.</p>
           </div>
         </div>
         <div class="highlight-card">
-          <div class="highlight-icon">📱</div>
+          <div class="highlight-icon"><span class="material-symbols-outlined">phone_android</span></div>
           <div>
             <h4>Android &amp; AI Apps</h4>
             <p>Kotlin/Jetpack Compose apps with Gemini AI, M-Pesa Daraja API, and offline-first architecture for Kenyan users.</p>
           </div>
         </div>
         <div class="highlight-card">
-          <div class="highlight-icon">🌿</div>
+          <div class="highlight-icon"><span class="material-symbols-outlined">eco</span></div>
           <div>
             <h4>Conservation Field Tech</h4>
             <p>Camera trap deployments, wildlife monitoring systems, and community data collection across ASAL regions.</p>
@@ -661,7 +672,7 @@
     <div class="skills-grid">
       <div class="skill-category">
         <div class="skill-cat-header">
-          <span class="skill-cat-icon">💻</span>
+          <span class="skill-cat-icon"><span class="material-symbols-outlined">terminal</span></span>
           <span class="skill-cat-title">Languages</span>
         </div>
         <div class="skill-tags">
@@ -676,7 +687,7 @@
       </div>
       <div class="skill-category">
         <div class="skill-cat-header">
-          <span class="skill-cat-icon">🏗️</span>
+          <span class="skill-cat-icon"><span class="material-symbols-outlined">build</span></span>
           <span class="skill-cat-title">Frameworks &amp; Platforms</span>
         </div>
         <div class="skill-tags">
@@ -689,7 +700,7 @@
       </div>
       <div class="skill-category">
         <div class="skill-cat-header">
-          <span class="skill-cat-icon">🗄️</span>
+          <span class="skill-cat-icon"><span class="material-symbols-outlined">storage</span></span>
           <span class="skill-cat-title">Databases</span>
         </div>
         <div class="skill-tags">
@@ -702,7 +713,7 @@
       </div>
       <div class="skill-category">
         <div class="skill-cat-header">
-          <span class="skill-cat-icon">🗺️</span>
+          <span class="skill-cat-icon"><span class="material-symbols-outlined">explore</span></span>
           <span class="skill-cat-title">GIS &amp; Data</span>
         </div>
         <div class="skill-tags">
@@ -716,7 +727,7 @@
       </div>
       <div class="skill-category">
         <div class="skill-cat-header">
-          <span class="skill-cat-icon">☁️</span>
+          <span class="skill-cat-icon"><span class="material-symbols-outlined">cloud</span></span>
           <span class="skill-cat-title">Cloud &amp; Infrastructure</span>
         </div>
         <div class="skill-tags">
@@ -729,7 +740,7 @@
       </div>
       <div class="skill-category">
         <div class="skill-cat-header">
-          <span class="skill-cat-icon">🔗</span>
+          <span class="skill-cat-icon"><span class="material-symbols-outlined">api</span></span>
           <span class="skill-cat-title">Integrations &amp; APIs</span>
         </div>
         <div class="skill-tags">
@@ -756,10 +767,10 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🚰</div>
+          <div class="project-icon"><span class="material-symbols-outlined">plumbing</span></div>
           <div class="project-badges">
             <span class="project-category cat-iot">IoT</span>
-            <a href="https://mikamwater.co.ke" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit Mikam Water">&#8599;</a>
+            <a href="https://mikamwater.co.ke" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit Mikam Water"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
           </div>
         </div>
         <div class="project-name">Mikam Water Platform</div>
@@ -779,7 +790,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🏠</div>
+          <div class="project-icon"><span class="material-symbols-outlined">home</span></div>
           <div class="project-badges">
             <span class="project-category cat-mobile">Android</span>
           </div>
@@ -801,7 +812,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🛒</div>
+          <div class="project-icon"><span class="material-symbols-outlined">storefront</span></div>
           <div class="project-badges">
             <span class="project-category cat-mobile">Android</span>
           </div>
@@ -823,10 +834,10 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🌐</div>
+          <div class="project-icon"><span class="material-symbols-outlined">language</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Web</span>
-            <a href="https://cetrad.org" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit CETRAD">&#8599;</a>
+            <a href="https://cetrad.org" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit CETRAD"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
           </div>
         </div>
         <div class="project-name">CETRAD Web &amp; Brand Suite</div>
@@ -846,7 +857,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">📷</div>
+          <div class="project-icon"><span class="material-symbols-outlined">camera_alt</span></div>
           <div class="project-badges">
             <span class="project-category cat-gis">GIS</span>
           </div>
@@ -867,7 +878,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🗺️</div>
+          <div class="project-icon"><span class="material-symbols-outlined">map</span></div>
           <div class="project-badges">
             <span class="project-category cat-gis">GIS</span>
           </div>
@@ -890,7 +901,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">💳</div>
+          <div class="project-icon"><span class="material-symbols-outlined">credit_card</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Web</span>
           </div>
@@ -912,10 +923,10 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🏢</div>
+          <div class="project-icon"><span class="material-symbols-outlined">business</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Web</span>
-            <a href="https://eelam.co.ke" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit Eelam">&#8599;</a>
+            <a href="https://eelam.co.ke" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit Eelam"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
           </div>
         </div>
         <div class="project-name">Eelam Innovations Platform</div>
@@ -935,10 +946,10 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🎓</div>
+          <div class="project-icon"><span class="material-symbols-outlined">school</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Web</span>
-            <a href="https://online.cetrad.org" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit CETRAD Online">&#8599;</a>
+            <a href="https://online.cetrad.org" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit CETRAD Online"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
           </div>
         </div>
         <div class="project-name">CETRAD Online Platform</div>
@@ -957,7 +968,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">📚</div>
+          <div class="project-icon"><span class="material-symbols-outlined">menu_book</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Web</span>
           </div>
@@ -978,7 +989,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">📦</div>
+          <div class="project-icon"><span class="material-symbols-outlined">inventory_2</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Web</span>
           </div>
@@ -999,7 +1010,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🌐</div>
+          <div class="project-icon"><span class="material-symbols-outlined">dns</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Web</span>
           </div>
@@ -1020,7 +1031,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🔄</div>
+          <div class="project-icon"><span class="material-symbols-outlined">autorenew</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Web</span>
           </div>
@@ -1041,7 +1052,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🐐</div>
+          <div class="project-icon"><span class="material-symbols-outlined">agriculture</span></div>
           <div class="project-badges">
             <span class="project-category cat-mobile">Android</span>
           </div>
@@ -1062,7 +1073,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🌦️</div>
+          <div class="project-icon"><span class="material-symbols-outlined">device_thermostat</span></div>
           <div class="project-badges">
             <span class="project-category cat-gis">Field Tech</span>
           </div>
@@ -1083,7 +1094,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🌊</div>
+          <div class="project-icon"><span class="material-symbols-outlined">waves</span></div>
           <div class="project-badges">
             <span class="project-category cat-gis">Field Tech</span>
           </div>
@@ -1104,7 +1115,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🐘</div>
+          <div class="project-icon"><span class="material-symbols-outlined">pets</span></div>
           <div class="project-badges">
             <span class="project-category cat-gis">GIS</span>
           </div>
@@ -1125,7 +1136,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <div class="project-icon">🛍️</div>
+          <div class="project-icon"><span class="material-symbols-outlined">monitoring</span></div>
           <div class="project-badges">
             <span class="project-category cat-web">Tool</span>
           </div>
@@ -1164,28 +1175,28 @@
         </p>
         <div class="contact-links">
           <a href="mailto:framutuma@gmail.com" class="contact-link-item">
-            <span class="contact-link-icon">✉️</span>
+            <span class="contact-link-icon"><span class="material-symbols-outlined">email</span></span>
             <div>
               <div class="contact-link-label">Email</div>
               <div class="contact-link-value">framutuma@gmail.com</div>
             </div>
           </a>
           <a href="https://www.linkedin.com/in/framutuma/" class="contact-link-item" target="_blank" rel="noopener">
-            <span class="contact-link-icon">💼</span>
+            <span class="contact-link-icon"><span class="material-symbols-outlined">work</span></span>
             <div>
               <div class="contact-link-label">LinkedIn</div>
               <div class="contact-link-value">linkedin.com/in/framutuma</div>
             </div>
           </a>
           <a href="https://github.com/promutuma" class="contact-link-item" target="_blank" rel="noopener">
-            <span class="contact-link-icon">🐙</span>
+            <span class="contact-link-icon"><span class="material-symbols-outlined">code</span></span>
             <div>
               <div class="contact-link-label">GitHub</div>
               <div class="contact-link-value">github.com/promutuma</div>
             </div>
           </a>
           <a href="https://twitter.com/framutuma" class="contact-link-item" target="_blank" rel="noopener">
-            <span class="contact-link-icon">🐦</span>
+            <span class="contact-link-icon"><span class="material-symbols-outlined">alternate_email</span></span>
             <div>
               <div class="contact-link-label">Twitter / X</div>
               <div class="contact-link-value">@framutuma</div>
@@ -1206,10 +1217,10 @@
         </div>
         <p class="contact-side-title">Find me on</p>
         <div class="social-row">
-          <a href="https://github.com/promutuma" class="social-btn" target="_blank" rel="noopener">🐙 GitHub</a>
-          <a href="https://www.linkedin.com/in/framutuma/" class="social-btn" target="_blank" rel="noopener">💼 LinkedIn</a>
-          <a href="https://twitter.com/framutuma" class="social-btn" target="_blank" rel="noopener">🐦 Twitter</a>
-          <a href="https://eelam.co.ke" class="social-btn" target="_blank" rel="noopener">🌐 Eelam.co.ke</a>
+          <a href="https://github.com/promutuma" class="social-btn" target="_blank" rel="noopener"><span class="material-symbols-outlined" style="font-size:16px">code</span> GitHub</a>
+          <a href="https://www.linkedin.com/in/framutuma/" class="social-btn" target="_blank" rel="noopener"><span class="material-symbols-outlined" style="font-size:16px">work</span> LinkedIn</a>
+          <a href="https://twitter.com/framutuma" class="social-btn" target="_blank" rel="noopener"><span class="material-symbols-outlined" style="font-size:16px">alternate_email</span> Twitter</a>
+          <a href="https://eelam.co.ke" class="social-btn" target="_blank" rel="noopener"><span class="material-symbols-outlined" style="font-size:16px">language</span> Eelam.co.ke</a>
         </div>
       </div>
     </div>
