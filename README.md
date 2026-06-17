@@ -27,11 +27,21 @@ Founder of **[Eelam Innovations](https://eelam.co.ke)**.
 #### Android
 - **NyumbaHub** — AI-powered rental marketplace (Kotlin, Jetpack Compose, Gemini AI, M-Pesa) — Google Gemini XPRIZE submission
 - **Kangai Shop** — Retail & milk delivery management app (Kotlin, Jetpack Compose, Room DB, SMS API)
-- **Akai Goat Farm** — Farm management app for Kenyan smallholder farmers (Kotlin, Jetpack Compose)
+- **Akai Goat Farm** — Farm management app for Kenyan smallholder goat farmers (Kotlin, Jetpack Compose, Room DB)
 
-#### GIS & Data
+#### GIS, Data & Field Tech
 - **GIS Data Infrastructure** — End-to-end spatial pipeline for SEI & CETRAD Water-Energy-Food Nexus project (ODK → PostgreSQL/PostGIS → GeoNode → QGIS → Power BI)
 - **WildlifeID Pro** — Camera trap analysis platform for Gambella Wetland Baseline Survey (Python, computer vision)
+- **Weather Station Monitoring Network** — Installation, maintenance, and data management for met stations across Kenya's ASAL counties
+- **River Level Monitoring System** — Data logger deployment and reporting for the Ewaso Ng'iro North Catchment
+- **HEC Incident Reporting System** — Human-Elephant Conflict incident mapping and reporting for conservation stakeholders
+
+#### Internal Tools & Utilities
+- **Knowledge Management System** — Institutional knowledge repository (Laravel 12, MySQL, RBAC, full-text search)
+- **Inventory & Stores Management System** — Assets, consumables, repairs, stock issuance, and transfers (CodeIgniter 4, MySQL)
+- **Domain & Hosting Management Platform** — Domain registration, billing, and client account management (Laravel)
+- **Subscription & Service Management System** — Single purchases, recurring subscriptions, add-ons, and super packages (Laravel 12)
+- **Jumia Price Tracker** — Product price monitoring and sales analysis tool for Jumia Kenya (Python, web scraping)
 
 ---
 
