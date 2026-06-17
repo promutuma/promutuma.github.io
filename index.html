@@ -7,43 +7,45 @@
   <meta name="description" content="Franklin Mutuma is a software developer, GIS engineer, and environmental tech consultant based in Kenya, building web platforms, Android apps, and data systems." />
   <meta name="keywords" content="Franklin Mutuma, software developer, Laravel, Kotlin, GIS, Kenya, web development, Android, M-Pesa, water tech" />
   <meta name="author" content="Franklin Mutuma" />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Franklin Mutuma — Software Developer & GIS Engineer" />
   <meta property="og:description" content="Software developer building web platforms, Android apps, and GIS data systems in Kenya." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://promutuma.github.io" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@framutuma" />
   <meta name="twitter:title" content="Franklin Mutuma — Software Developer & GIS Engineer" />
   <meta name="twitter:description" content="Software developer building web platforms, Android apps, and GIS data systems in Kenya." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2322d3ee'/><text x='50' y='67' font-family='sans-serif' font-size='50' font-weight='900' fill='%23030711' text-anchor='middle'>FM</text></svg>" />
 
-  <!-- Google Material Symbols -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%2306b6d4'/><text x='50' y='68' font-family='sans-serif' font-size='52' font-weight='800' fill='%23000' text-anchor='middle'>FM</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" />
 
   <style>
+    /* ─ reset ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ─ tokens ────────────────────────────────────── */
     :root {
-      --bg:          #060b18;
-      --bg-card:     #0d1526;
-      --border:      #1a2744;
-      --cyan:        #06b6d4;
-      --cyan-dim:    rgba(6,182,212,0.12);
-      --orange:      #f97316;
-      --green:       #22c55e;
-      --purple:      #a855f7;
-      --text:        #e2e8f0;
+      --bg:          #030711;
+      --bg2:         #060f1f;
+      --card:        rgba(255,255,255,0.03);
+      --card-hover:  rgba(255,255,255,0.055);
+      --border:      rgba(255,255,255,0.08);
+      --border-glow: rgba(34,211,238,0.35);
+      --cyan:        #22d3ee;
+      --blue:        #60a5fa;
+      --orange:      #fb923c;
+      --green:       #4ade80;
+      --purple:      #c084fc;
+      --yellow:      #fbbf24;
+      --text:        #f1f5f9;
       --text-dim:    #94a3b8;
-      --text-muted:  #64748b;
-      --radius:      12px;
-      --font:        'Segoe UI', system-ui, -apple-system, sans-serif;
-      --mono:        'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+      --text-muted:  #475569;
+      --radius:      14px;
+      --font:        'Inter', system-ui, sans-serif;
+      --font-head:   'Space Grotesk', system-ui, sans-serif;
+      --mono:        'JetBrains Mono', 'Fira Code', monospace;
     }
 
     html { scroll-behavior: smooth; }
@@ -54,252 +56,13 @@
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     a { color: var(--cyan); text-decoration: none; transition: opacity 0.2s; }
-    a:hover { opacity: 0.8; }
+    a:hover { opacity: 0.75; }
 
-    /* ── NAV ─────────────────────────────────────── */
-    nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 100;
-      background: rgba(6,11,24,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 1.5rem;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      font-family: var(--mono);
-      font-size: 1rem;
-      color: var(--cyan);
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-dim);
-      font-size: 0.875rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--cyan); opacity: 1; }
-
-    .nav-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text);
-      font-size: 1.5rem;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    /* ── HERO ────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6rem 1.5rem 5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(6,182,212,0.09) 0%, transparent 68%);
-      pointer-events: none;
-    }
-
-    .hero-content { max-width: 740px; text-align: center; }
-
-    .hero-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--cyan);
-      letter-spacing: 0.12em;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-    .hero-eyebrow::before, .hero-eyebrow::after {
-      content: '';
-      flex: 1;
-      max-width: 60px;
-      height: 1px;
-      background: var(--cyan);
-      opacity: 0.4;
-    }
-
-    .hero-name {
-      font-size: clamp(2.6rem, 7vw, 4.75rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      margin-bottom: 1rem;
-    }
-    .hero-name span { color: var(--cyan); }
-
-    .hero-title {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: var(--text-dim);
-      margin-bottom: 1.5rem;
-    }
-    .hero-title strong { color: var(--orange); font-weight: 600; }
-
-    .hero-bio {
-      color: var(--text-dim);
-      max-width: 560px;
-      margin: 0 auto 2.5rem;
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.75rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: var(--cyan);
-      color: #000;
-      border: 2px solid var(--cyan);
-    }
-    .btn-primary:hover { background: transparent; color: var(--cyan); opacity: 1; }
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 2px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); opacity: 1; }
-
-    .hero-stats {
-      display: flex;
-      gap: 2.5rem;
-      justify-content: center;
-      margin-top: 3.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid var(--border);
-      flex-wrap: wrap;
-    }
-    .stat-item { text-align: center; }
-    .stat-num {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--cyan);
-      font-family: var(--mono);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 0.3rem;
-    }
-
-    .scroll-hint {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.25rem;
-      color: var(--text-muted);
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      animation: bounce 2.2s ease-in-out infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50%       { transform: translateX(-50%) translateY(7px); }
-    }
-
-    /* ── SECTIONS ────────────────────────────────── */
-    section { padding: 5rem 1.5rem; }
-    .container { max-width: 1100px; margin: 0 auto; }
-
-    .section-header { margin-bottom: 3rem; }
-    .section-tag {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--cyan);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .section-title {
-      font-size: clamp(1.5rem, 4vw, 2.25rem);
-      font-weight: 700;
-      line-height: 1.25;
-    }
-    .section-title span { color: var(--cyan); }
-
-    /* ── ABOUT ───────────────────────────────────── */
-    #about {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: var(--text-dim);
-      margin-bottom: 1.25rem;
-      font-size: 1rem;
-      line-height: 1.85;
-    }
-    .about-text p:last-child { margin-bottom: 0; }
-
-    .about-highlights { display: flex; flex-direction: column; gap: 1rem; }
-
-    .highlight-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      transition: border-color 0.2s;
-    }
-    .highlight-card:hover { border-color: var(--cyan); }
+    /* ─ material icons ─────────────────────────────── */
     .material-symbols-outlined {
       font-size: inherit;
       font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
@@ -308,77 +71,490 @@
       user-select: none;
       display: inline-block;
     }
-    .highlight-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 0.1rem; color: var(--cyan); }
-    .highlight-card h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.3rem; }
-    .highlight-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
 
-    /* ── SKILLS ──────────────────────────────────── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
+    /* ─ nav ───────────────────────────────────────── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      height: 64px;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(3,7,17,0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
     }
 
-    .skill-category {
-      background: var(--bg-card);
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--cyan);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.06); opacity: 1; }
+
+    .nav-menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-dim);
+      padding: 0.35rem 0.5rem;
+      cursor: pointer;
+      font-size: 1.3rem;
+      line-height: 1;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-menu-btn:hover { border-color: var(--cyan); color: var(--text); }
+
+    /* ─ hero ──────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 1.5rem 4rem;
+      overflow: hidden;
+    }
+
+    /* dot grid */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(148,163,184,0.09) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    /* gradient vignette over grid */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, var(--bg) 100%);
+      pointer-events: none;
+    }
+
+    .hero-blobs {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.13;
+    }
+    .blob-1 { width: 600px; height: 600px; background: var(--cyan);   top: -150px; left: -180px; animation: drift 12s ease-in-out infinite; }
+    .blob-2 { width: 500px; height: 500px; background: var(--purple); bottom: -80px; right: -100px; animation: drift 15s ease-in-out infinite reverse; }
+    .blob-3 { width: 400px; height: 400px; background: var(--blue);   top: 40%; left: 40%; animation: drift 10s ease-in-out infinite 4s; }
+
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(45px, -35px) scale(1.04); }
+      66%       { transform: translate(-30px, 25px) scale(0.96); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--cyan);
+      background: rgba(34,211,238,0.08);
+      border: 1px solid rgba(34,211,238,0.2);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.04em;
+    }
+    .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse-dot 2s ease-in-out infinite; }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,211,238,0.4); }
+      50%       { opacity: 0.7; box-shadow: 0 0 0 5px rgba(34,211,238,0); }
+    }
+
+    .hero-name {
+      font-family: var(--font-head);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #f1f5f9 0%, #22d3ee 40%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      color: var(--text-dim);
+      margin-bottom: 1.25rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .hero-subtitle .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); }
+    .hero-subtitle .accent { color: var(--orange); }
+
+    .hero-bio {
+      max-width: 560px;
+      margin: 0 auto 2.75rem;
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.875rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.85rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: #030711;
+      border: none;
+      box-shadow: 0 0 0 0 rgba(34,211,238,0);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(34,211,238,0.28);
+      opacity: 1;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--cyan); color: var(--text); background: rgba(34,211,238,0.05); opacity: 1; transform: translateY(-2px); }
+
+    /* scroll hint */
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text-muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bob 2.5s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ─ stats bar ─────────────────────────────────── */
+    #stats {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+    }
+    .stats-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s;
+    }
+    .stat-card:hover { border-color: var(--border-glow); }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-weight: 500;
+    }
+
+    /* ─ shared section styles ─────────────────────── */
+    section { padding: 5.5rem 1.5rem; }
+    .container { max-width: 1120px; margin: 0 auto; }
+
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--cyan);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
+    }
+    .section-title .grad {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-lead {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      max-width: 520px;
+    }
+
+    .section-header { margin-bottom: 3rem; }
+
+    /* ─ about ─────────────────────────────────────── */
+    #about { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--text-dim);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--text); font-weight: 600; }
+
+    .about-cards { display: flex; flex-direction: column; gap: 0.875rem; }
+
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.25rem 1.25rem 1.1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color 0.2s, background 0.2s, transform 0.25s;
+    }
+    .about-card:hover { border-color: var(--border-glow); background: var(--card-hover); transform: translateX(4px); }
+
+    .about-card-icon {
+      font-size: 1.4rem;
+      color: var(--cyan);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34,211,238,0.08);
+      border-radius: 8px;
+    }
+    .about-card h4 { font-family: var(--font-head); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .about-card p  { font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* ─ skills ────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-card {
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.5rem;
-      transition: border-color 0.2s;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color 0.2s, transform 0.25s;
     }
-    .skill-category:hover { border-color: var(--cyan); }
+    .skill-card:hover { border-color: var(--border-glow); transform: translateY(-3px); }
 
-    .skill-cat-header {
+    .skill-card-header {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
     }
-    .skill-cat-icon { font-size: 1.25rem; color: var(--cyan); }
-    .skill-cat-title {
-      font-size: 0.78rem;
+    .skill-card-icon {
+      font-size: 1.1rem;
+      color: var(--cyan);
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34,211,238,0.09);
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .skill-card-title {
+      font-family: var(--font-head);
+      font-size: 0.82rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.07em;
       color: var(--text-dim);
     }
-
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .skill-tag {
-      background: var(--cyan-dim);
-      color: var(--cyan);
-      border: 1px solid rgba(6,182,212,0.22);
-      border-radius: 6px;
-      padding: 0.25rem 0.7rem;
-      font-size: 0.77rem;
-      font-weight: 500;
       font-family: var(--mono);
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--cyan);
+      background: rgba(34,211,238,0.08);
+      border: 1px solid rgba(34,211,238,0.18);
+      border-radius: 6px;
+      padding: 0.22rem 0.65rem;
     }
 
-    /* ── PROJECTS ────────────────────────────────── */
-    #projects {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    /* ─ projects ──────────────────────────────────── */
+    #projects { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
     }
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      background: transparent;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      font-weight: 500;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--cyan); color: var(--text); background: rgba(34,211,238,0.06); }
+    .filter-btn.active { background: var(--cyan); color: #030711; border-color: var(--cyan); font-weight: 700; }
+    .filter-btn .count {
+      background: rgba(0,0,0,0.18);
+      border-radius: 100px;
+      padding: 0.05rem 0.45rem;
+      font-size: 0.68rem;
+    }
+    .filter-btn.active .count { background: rgba(0,0,0,0.25); }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
       gap: 1.25rem;
     }
 
     .project-card {
-      background: var(--bg);
+      background: var(--card);
       border: 1px solid var(--border);
+      border-top: 3px solid var(--cat-color, var(--border));
       border-radius: var(--radius);
       padding: 1.75rem;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
-      transition: border-color 0.25s, transform 0.25s;
+      gap: 0.875rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color 0.25s, transform 0.25s, background 0.25s, box-shadow 0.25s;
     }
-    .project-card:hover { border-color: var(--cyan); transform: translateY(-3px); }
+    .project-card:hover {
+      border-color: var(--cat-color, var(--border-glow));
+      border-top-color: var(--cat-color, var(--cyan));
+      background: var(--card-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+    .project-card.hidden { display: none; }
 
     .project-header {
       display: flex;
@@ -386,133 +562,150 @@
       justify-content: space-between;
       gap: 1rem;
     }
-    .project-icon { font-size: 2rem; line-height: 1; color: var(--cyan); }
-
-    .project-badges { display: flex; gap: 0.4rem; align-items: center; }
-
-    .project-category {
-      font-size: 0.68rem;
+    .project-icon {
+      font-size: 1.7rem;
+      color: var(--cat-color, var(--cyan));
+      width: 2.6rem;
+      height: 2.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+    .project-meta { display: flex; align-items: center; gap: 0.4rem; }
+    .project-badge {
+      font-size: 0.65rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.07em;
-      padding: 0.2rem 0.55rem;
+      padding: 0.18rem 0.55rem;
       border-radius: 4px;
+      background: rgba(255,255,255,0.06);
+      color: var(--cat-color, var(--text-dim));
     }
-    .cat-web    { background: rgba(249,115,22,0.13); color: var(--orange); }
-    .cat-mobile { background: rgba(34,197,94,0.13);  color: var(--green);  }
-    .cat-gis    { background: rgba(6,182,212,0.13);  color: var(--cyan);   }
-    .cat-iot    { background: rgba(168,85,247,0.13); color: var(--purple); }
-
-    .project-ext-link {
+    .project-link {
       color: var(--text-muted);
+      display: flex;
+      align-items: center;
       font-size: 1rem;
       padding: 0.2rem;
-      transition: color 0.2s;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
     }
-    .project-ext-link:hover { color: var(--cyan); opacity: 1; }
-
-    .project-name { font-size: 1rem; font-weight: 700; }
-
+    .project-link:hover { color: var(--cyan); background: rgba(34,211,238,0.1); opacity: 1; }
+    .project-name {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
     .project-desc {
       font-size: 0.855rem;
       color: var(--text-dim);
-      line-height: 1.72;
+      line-height: 1.75;
       flex: 1;
     }
-
     .project-tech { display: flex; flex-wrap: wrap; gap: 0.35rem; }
     .tech-tag {
-      background: rgba(15,23,42,0.8);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      border-radius: 4px;
-      padding: 0.18rem 0.55rem;
-      font-size: 0.7rem;
       font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.18rem 0.55rem;
     }
 
-    /* ── CONTACT ─────────────────────────────────── */
+    /* ─ contact ───────────────────────────────────── */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: start;
     }
-
-    .contact-intro {
-      color: var(--text-dim);
-      line-height: 1.82;
-      margin-bottom: 2rem;
-      font-size: 0.975rem;
-    }
+    .contact-intro { color: var(--text-dim); line-height: 1.85; margin-bottom: 2rem; font-size: 0.975rem; }
 
     .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
-
-    .contact-link-item {
+    .contact-item {
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 0.875rem 1rem;
-      background: var(--bg-card);
+      padding: 1rem 1.1rem;
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: var(--radius);
       color: var(--text);
-      transition: border-color 0.2s;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.2s, background 0.2s, transform 0.25s;
     }
-    .contact-link-item:hover { border-color: var(--cyan); opacity: 1; }
-    .contact-link-icon { font-size: 1.25rem; width: 1.5rem; text-align: center; color: var(--cyan); }
-    .contact-link-label { font-size: 0.73rem; color: var(--text-muted); }
-    .contact-link-value { font-size: 0.875rem; font-weight: 500; }
+    .contact-item:hover { border-color: var(--border-glow); background: var(--card-hover); transform: translateX(4px); opacity: 1; }
+    .contact-item-icon {
+      font-size: 1.2rem;
+      color: var(--cyan);
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34,211,238,0.08);
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    .contact-item-label { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.1rem; }
+    .contact-item-value { font-size: 0.9rem; font-weight: 500; }
 
-    .availability {
-      background: var(--bg-card);
+    .contact-right-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .availability-card {
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.5rem;
-      margin-bottom: 1.75rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
     }
-    .avail-header { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: 0.9rem; }
-
-    .availability-dot {
-      width: 9px; height: 9px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-      animation: pulse-green 2s ease-in-out infinite;
+    .avail-row { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-family: var(--font-head); font-size: 0.95rem; margin-bottom: 0.6rem; }
+    .avail-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); flex-shrink: 0; animation: ping 2s ease-in-out infinite; }
+    @keyframes ping {
+      0%, 100% { box-shadow: 0 0 0 0   rgba(74,222,128,0.5); }
+      50%       { box-shadow: 0 0 0 6px rgba(74,222,128,0); }
     }
-    @keyframes pulse-green {
-      0%, 100% { box-shadow: 0 0 0 0   rgba(34,197,94,0.5); }
-      50%       { box-shadow: 0 0 0 6px rgba(34,197,94,0);   }
-    }
-    .availability p { font-size: 0.82rem; color: var(--text-dim); margin-top: 0.6rem; line-height: 1.6; }
+    .availability-card p { font-size: 0.83rem; color: var(--text-dim); line-height: 1.6; }
 
-    .contact-side-title { font-size: 0.85rem; font-weight: 700; color: var(--text-dim); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
-
-    .social-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-
+    .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
     .social-btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.55rem 1.1rem;
-      background: var(--bg-card);
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
       color: var(--text-dim);
       font-size: 0.82rem;
       font-weight: 500;
       transition: all 0.2s;
     }
-    .social-btn:hover { border-color: var(--cyan); color: var(--cyan); opacity: 1; }
+    .social-btn:hover { border-color: var(--cyan); color: var(--text); background: rgba(34,211,238,0.05); opacity: 1; }
+    .social-btn .material-symbols-outlined { font-size: 1rem; color: var(--cyan); }
 
-    /* ── FOOTER ──────────────────────────────────── */
+    /* ─ footer ────────────────────────────────────── */
     footer {
-      background: var(--bg-card);
+      background: var(--bg2);
       border-top: 1px solid var(--border);
-      padding: 1.75rem 1.5rem;
+      padding: 2rem 1.5rem;
     }
     .footer-inner {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -523,35 +716,56 @@
     .footer-logo { font-family: var(--mono); color: var(--cyan); font-size: 0.875rem; }
     .footer-copy { font-size: 0.775rem; color: var(--text-muted); }
     .footer-nav { display: flex; gap: 1.5rem; }
-    .footer-nav a { font-size: 0.775rem; color: var(--text-muted); }
-    .footer-nav a:hover { color: var(--cyan); }
+    .footer-nav a { font-size: 0.775rem; color: var(--text-muted); transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--cyan); opacity: 1; }
 
-    /* ── RESPONSIVE ──────────────────────────────── */
+    /* ─ reveal animation ──────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─ responsive ────────────────────────────────── */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .nav-links.open {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 60px; left: 0; right: 0;
-        background: var(--bg-card);
+        top: 64px; left: 0; right: 0;
+        background: rgba(3,7,17,0.97);
+        backdrop-filter: blur(20px);
         border-bottom: 1px solid var(--border);
         padding: 1.25rem 1.5rem;
-        gap: 1.1rem;
+        gap: 0.25rem;
       }
-      .nav-menu-btn { display: block; }
-      .about-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-menu-btn { display: flex; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-stats { gap: 1.5rem; }
       .projects-grid { grid-template-columns: 1fr; }
+      .social-grid { grid-template-columns: 1fr 1fr; }
       .footer-inner { flex-direction: column; text-align: center; }
+      .footer-nav { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-name { font-size: 2.8rem; }
     }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="navbar">
   <span class="nav-logo">fm.dev</span>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
@@ -559,59 +773,80 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu"><span class="material-symbols-outlined">menu</span></button>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Based in Kenya</p>
-    <h1 class="hero-name">Franklin <span>Mutuma</span></h1>
-    <p class="hero-title">
-      Software Developer &middot; GIS Engineer &middot; <strong>Environmental Tech</strong>
+    <div class="hero-tag">Available for projects &middot; Based in Kenya</div>
+    <h1 class="hero-name">Franklin Mutuma</h1>
+    <p class="hero-subtitle">
+      <span>Software Developer</span>
+      <span class="dot"></span>
+      <span>GIS Engineer</span>
+      <span class="dot"></span>
+      <span class="accent">Environmental Tech</span>
     </p>
     <p class="hero-bio">
-      I build web platforms, Android apps, and data infrastructure for water resources,
-      conservation, and agribusiness &mdash; specializing in Laravel, Kotlin, and spatial data systems.
+      I build web platforms, Android apps, and spatial data infrastructure for water resources,
+      conservation, and agribusiness &mdash; specializing in Laravel, Kotlin, and GIS toolchains.
     </p>
     <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">8+</div>
-        <div class="stat-label">Projects Shipped</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">4</div>
-        <div class="stat-label">Counties Covered</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Tech Domains</div>
-      </div>
+      <a href="#projects" class="btn btn-primary">
+        <span class="material-symbols-outlined" style="font-size:18px">rocket_launch</span>
+        View Projects
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        <span class="material-symbols-outlined" style="font-size:18px">alternate_email</span>
+        Get in Touch
+      </a>
     </div>
   </div>
-  <a href="#about" class="scroll-hint" aria-label="Scroll down">
+  <a href="#stats" class="scroll-hint" aria-label="Scroll down">
     <span>scroll</span>
-    <span class="material-symbols-outlined" style="font-size:20px">keyboard_arrow_down</span>
+    <span class="material-symbols-outlined" style="font-size:18px">keyboard_arrow_down</span>
   </a>
 </section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-card reveal">
+      <div class="stat-num" data-target="18" data-suffix="+">18+</div>
+      <div class="stat-label">Projects Shipped</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-1">
+      <div class="stat-num" data-target="5" data-suffix="+">5+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-2">
+      <div class="stat-num" data-target="4">4</div>
+      <div class="stat-label">Counties Covered</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-3">
+      <div class="stat-num" data-target="3">3</div>
+      <div class="stat-label">Tech Domains</div>
+    </div>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="container">
-    <div class="section-header">
-      <p class="section-tag">// about me</p>
-      <h2 class="section-title">Building tech at the intersection of<br><span>code, data &amp; environment</span></h2>
+    <div class="section-header reveal">
+      <p class="section-eyebrow">About me</p>
+      <h2 class="section-title">Building tech at the intersection of<br><span class="grad">code, data &amp; environment</span></h2>
     </div>
     <div class="about-grid">
-      <div class="about-text">
+      <div class="about-text reveal">
         <p>
           I'm Franklin Mutuma, a software developer and GIS engineer based in Kenya, working across
           the water resources, wildlife conservation, and agribusiness sectors. My work spans
@@ -628,33 +863,33 @@
           &mdash; from field installation to production deployment.
         </p>
       </div>
-      <div class="about-highlights">
-        <div class="highlight-card">
-          <div class="highlight-icon"><span class="material-symbols-outlined">water_drop</span></div>
+      <div class="about-cards">
+        <div class="about-card reveal reveal-delay-1">
+          <div class="about-card-icon"><span class="material-symbols-outlined">water_drop</span></div>
           <div>
             <h4>Water Resources Tech</h4>
-            <p>Smart meter data platforms, borehole monitoring, and utility management systems for Kenyan water utilities.</p>
+            <p>Smart meter platforms, borehole monitoring, and utility management for Kenyan water utilities.</p>
           </div>
         </div>
-        <div class="highlight-card">
-          <div class="highlight-icon"><span class="material-symbols-outlined">map</span></div>
+        <div class="about-card reveal reveal-delay-2">
+          <div class="about-card-icon"><span class="material-symbols-outlined">map</span></div>
           <div>
             <h4>GIS &amp; Spatial Data</h4>
-            <p>End-to-end GIS pipelines using ODK, PostgreSQL/PostGIS, GeoNode, QGIS, and Power BI for environmental research.</p>
+            <p>End-to-end pipelines: ODK &rarr; PostgreSQL/PostGIS &rarr; GeoNode &rarr; QGIS &rarr; Power BI.</p>
           </div>
         </div>
-        <div class="highlight-card">
-          <div class="highlight-icon"><span class="material-symbols-outlined">phone_android</span></div>
+        <div class="about-card reveal reveal-delay-3">
+          <div class="about-card-icon"><span class="material-symbols-outlined">phone_android</span></div>
           <div>
             <h4>Android &amp; AI Apps</h4>
-            <p>Kotlin/Jetpack Compose apps with Gemini AI, M-Pesa Daraja API, and offline-first architecture for Kenyan users.</p>
+            <p>Kotlin/Jetpack Compose apps with Gemini AI, M-Pesa Daraja, and offline-first architecture.</p>
           </div>
         </div>
-        <div class="highlight-card">
-          <div class="highlight-icon"><span class="material-symbols-outlined">eco</span></div>
+        <div class="about-card reveal reveal-delay-4">
+          <div class="about-card-icon"><span class="material-symbols-outlined">eco</span></div>
           <div>
             <h4>Conservation Field Tech</h4>
-            <p>Camera trap deployments, wildlife monitoring systems, and community data collection across ASAL regions.</p>
+            <p>Camera trap systems, wildlife monitoring, and community data collection across ASAL regions.</p>
           </div>
         </div>
       </div>
@@ -665,91 +900,76 @@
 <!-- SKILLS -->
 <section id="skills">
   <div class="container">
-    <div class="section-header">
-      <p class="section-tag">// tech stack</p>
-      <h2 class="section-title">Skills &amp; <span>Technologies</span></h2>
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Tech stack</p>
+      <h2 class="section-title">Skills &amp; <span class="grad">Technologies</span></h2>
     </div>
     <div class="skills-grid">
-      <div class="skill-category">
-        <div class="skill-cat-header">
-          <span class="skill-cat-icon"><span class="material-symbols-outlined">terminal</span></span>
-          <span class="skill-cat-title">Languages</span>
+      <div class="skill-card reveal">
+        <div class="skill-card-header">
+          <div class="skill-card-icon"><span class="material-symbols-outlined">terminal</span></div>
+          <span class="skill-card-title">Languages</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">HTML/CSS</span>
+          <span class="skill-tag">PHP</span><span class="skill-tag">Kotlin</span>
+          <span class="skill-tag">JavaScript</span><span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span><span class="skill-tag">HTML/CSS</span>
           <span class="skill-tag">Bash</span>
         </div>
       </div>
-      <div class="skill-category">
-        <div class="skill-cat-header">
-          <span class="skill-cat-icon"><span class="material-symbols-outlined">build</span></span>
-          <span class="skill-cat-title">Frameworks &amp; Platforms</span>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-card-header">
+          <div class="skill-card-icon"><span class="material-symbols-outlined">build</span></div>
+          <span class="skill-card-title">Frameworks &amp; Platforms</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Laravel</span>
-          <span class="skill-tag">CodeIgniter 4</span>
-          <span class="skill-tag">Jetpack Compose</span>
-          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Laravel</span><span class="skill-tag">CodeIgniter 4</span>
+          <span class="skill-tag">Jetpack Compose</span><span class="skill-tag">WordPress</span>
           <span class="skill-tag">Filament</span>
         </div>
       </div>
-      <div class="skill-category">
-        <div class="skill-cat-header">
-          <span class="skill-cat-icon"><span class="material-symbols-outlined">storage</span></span>
-          <span class="skill-cat-title">Databases</span>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-header">
+          <div class="skill-card-icon"><span class="material-symbols-outlined">storage</span></div>
+          <span class="skill-card-title">Databases</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">PostGIS</span>
-          <span class="skill-tag">SQLite</span>
+          <span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">PostGIS</span><span class="skill-tag">SQLite</span>
           <span class="skill-tag">Room DB</span>
         </div>
       </div>
-      <div class="skill-category">
-        <div class="skill-cat-header">
-          <span class="skill-cat-icon"><span class="material-symbols-outlined">explore</span></span>
-          <span class="skill-cat-title">GIS &amp; Data</span>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-card-header">
+          <div class="skill-card-icon"><span class="material-symbols-outlined">explore</span></div>
+          <span class="skill-card-title">GIS &amp; Data</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">QGIS</span>
-          <span class="skill-tag">ArcGIS Pro</span>
-          <span class="skill-tag">GeoNode</span>
-          <span class="skill-tag">GeoServer</span>
-          <span class="skill-tag">ODK</span>
-          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">QGIS</span><span class="skill-tag">ArcGIS Pro</span>
+          <span class="skill-tag">GeoNode</span><span class="skill-tag">GeoServer</span>
+          <span class="skill-tag">ODK</span><span class="skill-tag">Power BI</span>
         </div>
       </div>
-      <div class="skill-category">
-        <div class="skill-cat-header">
-          <span class="skill-cat-icon"><span class="material-symbols-outlined">cloud</span></span>
-          <span class="skill-cat-title">Cloud &amp; Infrastructure</span>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-card-header">
+          <div class="skill-card-icon"><span class="material-symbols-outlined">cloud</span></div>
+          <span class="skill-card-title">Cloud &amp; Infrastructure</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Linux Server</span>
-          <span class="skill-tag">Cloudflare Tunnel</span>
-          <span class="skill-tag">GitHub Pages</span>
-          <span class="skill-tag">Apache</span>
+          <span class="skill-tag">Linux Server</span><span class="skill-tag">Cloudflare Tunnel</span>
+          <span class="skill-tag">GitHub Pages</span><span class="skill-tag">Apache</span>
           <span class="skill-tag">Nginx</span>
         </div>
       </div>
-      <div class="skill-category">
-        <div class="skill-cat-header">
-          <span class="skill-cat-icon"><span class="material-symbols-outlined">api</span></span>
-          <span class="skill-cat-title">Integrations &amp; APIs</span>
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-card-header">
+          <div class="skill-card-icon"><span class="material-symbols-outlined">api</span></div>
+          <span class="skill-card-title">Integrations &amp; APIs</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">M-Pesa/Daraja</span>
-          <span class="skill-tag">Gemini AI</span>
-          <span class="skill-tag">Google OAuth</span>
-          <span class="skill-tag">UDP/IoT</span>
-          <span class="skill-tag">GiveWP</span>
-          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">M-Pesa/Daraja</span><span class="skill-tag">Gemini AI</span>
+          <span class="skill-tag">Google OAuth</span><span class="skill-tag">UDP/IoT</span>
+          <span class="skill-tag">GiveWP</span><span class="skill-tag">REST APIs</span>
         </div>
       </div>
     </div>
@@ -759,399 +979,292 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-    <div class="section-header">
-      <p class="section-tag">// portfolio</p>
-      <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Portfolio</p>
+      <h2 class="section-title">Featured <span class="grad">Projects</span></h2>
+      <p class="section-lead">18 projects spanning web platforms, Android apps, GIS infrastructure, and field tech.</p>
     </div>
+
+    <div class="filter-tabs reveal">
+      <button class="filter-btn active" data-filter="all">All <span class="count">18</span></button>
+      <button class="filter-btn" data-filter="web">Web <span class="count">8</span></button>
+      <button class="filter-btn" data-filter="android">Android <span class="count">3</span></button>
+      <button class="filter-btn" data-filter="gis">GIS <span class="count">5</span></button>
+      <button class="filter-btn" data-filter="iot">IoT <span class="count">1</span></button>
+      <button class="filter-btn" data-filter="tool">Tool <span class="count">1</span></button>
+    </div>
+
     <div class="projects-grid">
 
-      <div class="project-card">
+      <!-- 1 Mikam Water -->
+      <div class="project-card reveal" data-category="iot" style="--cat-color: var(--purple)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">plumbing</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-iot">IoT</span>
-            <a href="https://mikamwater.co.ke" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit Mikam Water"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
+          <div class="project-meta">
+            <span class="project-badge">IoT</span>
+            <a href="https://mikamwater.co.ke" class="project-link" target="_blank" rel="noopener" aria-label="Visit Mikam Water">
+              <span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>
+            </a>
           </div>
         </div>
         <div class="project-name">Mikam Water Platform</div>
-        <div class="project-desc">
-          Full-stack platform managing smart 4G cellular water meter data for a Kenyan utility.
-          Includes a UDP server that receives meter readings in real time, processes them,
-          and exposes JSON APIs. Features billing, consumption dashboards, and admin controls.
-        </div>
+        <div class="project-desc">Full-stack platform managing smart 4G cellular water meter data for a Kenyan utility. UDP server receives meter readings in real time, processes them, and exposes JSON APIs. Features billing, dashboards, and admin controls.</div>
         <div class="project-tech">
-          <span class="tech-tag">Laravel</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">UDP Server</span>
-          <span class="tech-tag">REST API</span>
-          <span class="tech-tag">IoT</span>
+          <span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span>
+          <span class="tech-tag">UDP Server</span><span class="tech-tag">REST API</span><span class="tech-tag">IoT</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 2 NyumbaHub -->
+      <div class="project-card reveal reveal-delay-1" data-category="android" style="--cat-color: var(--green)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">home</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-mobile">Android</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Android</span></div>
         </div>
         <div class="project-name">NyumbaHub</div>
-        <div class="project-desc">
-          AI-powered rental marketplace for Kenya, submitted to the Google Build with Gemini XPRIZE.
-          Gemini AI agent for property matching, M-Pesa/Daraja payments, landlord/tenant portals,
-          and an offline-first architecture for low-connectivity environments.
-        </div>
+        <div class="project-desc">AI-powered rental marketplace for Kenya, submitted to the Google Build with Gemini XPRIZE. Gemini AI agent for property matching, M-Pesa/Daraja payments, landlord/tenant portals, and offline-first architecture.</div>
         <div class="project-tech">
-          <span class="tech-tag">Kotlin</span>
-          <span class="tech-tag">Jetpack Compose</span>
-          <span class="tech-tag">Gemini AI</span>
-          <span class="tech-tag">M-Pesa</span>
-          <span class="tech-tag">Android</span>
+          <span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span>
+          <span class="tech-tag">Gemini AI</span><span class="tech-tag">M-Pesa</span><span class="tech-tag">Android</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 3 Kangai Shop -->
+      <div class="project-card reveal reveal-delay-2" data-category="android" style="--cat-color: var(--green)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">storefront</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-mobile">Android</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Android</span></div>
         </div>
         <div class="project-name">Kangai Shop</div>
-        <div class="project-desc">
-          Android retail management app for a small Kenyan shop. Handles daily milk delivery
-          tracking, customer and supplier ledger management, SMS notifications, and sales
-          reporting &mdash; built for low-connectivity rural environments.
-        </div>
+        <div class="project-desc">Android retail management app for a small Kenyan shop. Handles daily milk delivery tracking, customer and supplier ledger management, SMS notifications, and sales reporting for low-connectivity rural environments.</div>
         <div class="project-tech">
-          <span class="tech-tag">Kotlin</span>
-          <span class="tech-tag">Jetpack Compose</span>
-          <span class="tech-tag">Room DB</span>
-          <span class="tech-tag">SMS API</span>
-          <span class="tech-tag">Android</span>
+          <span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span>
+          <span class="tech-tag">Room DB</span><span class="tech-tag">SMS API</span><span class="tech-tag">Android</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 4 CETRAD Web -->
+      <div class="project-card reveal" data-category="web" style="--cat-color: var(--orange)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">language</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Web</span>
-            <a href="https://cetrad.org" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit CETRAD"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
+          <div class="project-meta">
+            <span class="project-badge">Web</span>
+            <a href="https://cetrad.org" class="project-link" target="_blank" rel="noopener" aria-label="Visit CETRAD">
+              <span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>
+            </a>
           </div>
         </div>
         <div class="project-name">CETRAD Web &amp; Brand Suite</div>
-        <div class="project-desc">
-          Complete brand and digital overhaul for CETRAD &mdash; 8-page WCAG-compliant website,
-          WordPress theme, newsletter plugin, HTML email signature, letterhead, and PowerPoint template.
-          Design system built on Brand Guidelines v1.0 (cyan/orange/green palette).
-        </div>
+        <div class="project-desc">Complete brand and digital overhaul for CETRAD &mdash; 8-page WCAG-compliant site, WordPress theme, newsletter plugin, HTML email signature, letterhead, and PowerPoint template on Brand Guidelines v1.0.</div>
         <div class="project-tech">
-          <span class="tech-tag">WordPress</span>
-          <span class="tech-tag">HTML/CSS</span>
-          <span class="tech-tag">WCAG 2.1</span>
-          <span class="tech-tag">UI/UX Design</span>
-          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">WordPress</span><span class="tech-tag">HTML/CSS</span>
+          <span class="tech-tag">WCAG 2.1</span><span class="tech-tag">UI/UX</span><span class="tech-tag">PHP</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 5 WildlifeID -->
+      <div class="project-card reveal reveal-delay-1" data-category="gis" style="--cat-color: var(--cyan)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">camera_alt</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-gis">GIS</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">GIS</span></div>
         </div>
         <div class="project-name">WildlifeID Pro</div>
-        <div class="project-desc">
-          Camera trap analysis platform for CETRAD's Gambella Wetland Landscape Baseline Survey.
-          Ecological indicator dashboards, human-in-the-loop species review, batch image processing,
-          and cross-platform packaging for field researchers.
-        </div>
+        <div class="project-desc">Camera trap analysis platform for CETRAD's Gambella Wetland Baseline Survey. Ecological indicator dashboards, human-in-the-loop species review, batch image processing, and cross-platform packaging for field researchers.</div>
         <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Computer Vision</span>
-          <span class="tech-tag">PostgreSQL</span>
-          <span class="tech-tag">Field Data</span>
+          <span class="tech-tag">Python</span><span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Field Data</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 6 GIS Infra -->
+      <div class="project-card reveal reveal-delay-2" data-category="gis" style="--cat-color: var(--cyan)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">map</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-gis">GIS</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">GIS</span></div>
         </div>
         <div class="project-name">GIS Data Infrastructure</div>
-        <div class="project-desc">
-          End-to-end spatial data pipeline for the Water-Energy-Food Nexus project (Stockholm
-          Environment Institute &amp; CETRAD). ODK collection &rarr; PostgreSQL/PostGIS &rarr;
-          GeoNode publishing &rarr; QGIS analysis &rarr; Power BI dashboards, served securely
-          via Cloudflare Tunnel.
-        </div>
+        <div class="project-desc">End-to-end spatial pipeline for the Water-Energy-Food Nexus project (Stockholm Environment Institute &amp; CETRAD). ODK &rarr; PostgreSQL/PostGIS &rarr; GeoNode &rarr; QGIS &rarr; Power BI, via Cloudflare Tunnel.</div>
         <div class="project-tech">
-          <span class="tech-tag">PostgreSQL/PostGIS</span>
-          <span class="tech-tag">GeoNode</span>
-          <span class="tech-tag">QGIS</span>
-          <span class="tech-tag">ODK</span>
-          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">PostgreSQL/PostGIS</span><span class="tech-tag">GeoNode</span>
+          <span class="tech-tag">QGIS</span><span class="tech-tag">ODK</span><span class="tech-tag">Power BI</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 7 M-Pesa Library -->
+      <div class="project-card reveal" data-category="web" style="--cat-color: var(--orange)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">credit_card</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Web</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Web</span></div>
         </div>
         <div class="project-name">M-Pesa Integration Library</div>
-        <div class="project-desc">
-          Reusable M-Pesa/Daraja STK Push library for Laravel and CodeIgniter 4. Supports both the
-          GiveWP Visual Form Builder and the legacy Option-Based editor. Used in production at
-          lululight.org for charitable donation processing.
-        </div>
+        <div class="project-desc">Reusable M-Pesa/Daraja STK Push library for Laravel and CodeIgniter 4. Supports GiveWP Visual Form Builder and the legacy Option-Based editor. Used in production at lululight.org for charitable donations.</div>
         <div class="project-tech">
-          <span class="tech-tag">PHP</span>
-          <span class="tech-tag">Laravel</span>
-          <span class="tech-tag">CodeIgniter 4</span>
-          <span class="tech-tag">M-Pesa Daraja</span>
-          <span class="tech-tag">GiveWP</span>
+          <span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span>
+          <span class="tech-tag">CodeIgniter 4</span><span class="tech-tag">M-Pesa Daraja</span><span class="tech-tag">GiveWP</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 8 Eelam Platform -->
+      <div class="project-card reveal reveal-delay-1" data-category="web" style="--cat-color: var(--orange)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">business</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Web</span>
-            <a href="https://eelam.co.ke" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit Eelam"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
+          <div class="project-meta">
+            <span class="project-badge">Web</span>
+            <a href="https://eelam.co.ke" class="project-link" target="_blank" rel="noopener" aria-label="Visit Eelam">
+              <span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>
+            </a>
           </div>
         </div>
         <div class="project-name">Eelam Innovations Platform</div>
-        <div class="project-desc">
-          Corporate web platform with separate client, employee, and admin portals.
-          Features payment gateway integration (M-Pesa + PayPal), subscription and service
-          package management, pricing comparison tools, and testimonial management.
-        </div>
+        <div class="project-desc">Corporate web platform with separate client, employee, and admin portals. Payment gateway integration (M-Pesa + PayPal), subscription and service package management, pricing comparison, and testimonials.</div>
         <div class="project-tech">
-          <span class="tech-tag">Laravel 12</span>
-          <span class="tech-tag">Filament</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">M-Pesa</span>
-          <span class="tech-tag">PayPal</span>
+          <span class="tech-tag">Laravel 12</span><span class="tech-tag">Filament</span>
+          <span class="tech-tag">MySQL</span><span class="tech-tag">M-Pesa</span><span class="tech-tag">PayPal</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 9 CETRAD Online -->
+      <div class="project-card reveal reveal-delay-2" data-category="web" style="--cat-color: var(--orange)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">school</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Web</span>
-            <a href="https://online.cetrad.org" class="project-ext-link" target="_blank" rel="noopener" aria-label="Visit CETRAD Online"><span class="material-symbols-outlined" style="font-size:16px">open_in_new</span></a>
+          <div class="project-meta">
+            <span class="project-badge">Web</span>
+            <a href="https://online.cetrad.org" class="project-link" target="_blank" rel="noopener" aria-label="Visit CETRAD Online">
+              <span class="material-symbols-outlined" style="font-size:16px">open_in_new</span>
+            </a>
           </div>
         </div>
         <div class="project-name">CETRAD Online Platform</div>
-        <div class="project-desc">
-          Web platform handling CETRAD's digital services: online course applications, staff leave
-          management, and institutional service requests. Ongoing maintenance and feature upgrades
-          for a multi-department organization.
-        </div>
+        <div class="project-desc">Web platform handling CETRAD's digital services: online course applications, staff leave management, and institutional service requests. Ongoing maintenance and upgrades for a multi-department organization.</div>
         <div class="project-tech">
-          <span class="tech-tag">PHP</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">Laravel</span>
-          <span class="tech-tag">Admin Portal</span>
+          <span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Laravel</span><span class="tech-tag">Admin Portal</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 10 Knowledge Mgmt -->
+      <div class="project-card reveal" data-category="web" style="--cat-color: var(--orange)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">menu_book</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Web</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Web</span></div>
         </div>
         <div class="project-name">Knowledge Management System</div>
-        <div class="project-desc">
-          Web-based institutional knowledge repository allowing organizations to capture, organize,
-          and retrieve institutional knowledge. Built on Laravel 12 with a clean document taxonomy,
-          search, and role-based access control.
-        </div>
+        <div class="project-desc">Web-based institutional knowledge repository for capturing, organizing, and retrieving organizational knowledge. Built on Laravel 12 with a clean document taxonomy, full-text search, and role-based access control.</div>
         <div class="project-tech">
-          <span class="tech-tag">Laravel 12</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">Full-text Search</span>
-          <span class="tech-tag">RBAC</span>
+          <span class="tech-tag">Laravel 12</span><span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Full-text Search</span><span class="tech-tag">RBAC</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 11 Inventory -->
+      <div class="project-card reveal reveal-delay-1" data-category="web" style="--cat-color: var(--orange)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">inventory_2</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Web</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Web</span></div>
         </div>
-        <div class="project-name">Inventory &amp; Stores Management System</div>
-        <div class="project-desc">
-          Comprehensive stores management system covering assets, consumables, repairs, stock
-          issuance, and inter-department stock transfers. Includes full audit trail and reporting
-          for organizational procurement workflows.
-        </div>
+        <div class="project-name">Inventory &amp; Stores Management</div>
+        <div class="project-desc">Comprehensive stores system covering assets, consumables, repairs, stock issuance, and inter-department transfers. Full audit trail and reporting for organizational procurement workflows.</div>
         <div class="project-tech">
-          <span class="tech-tag">CodeIgniter 4</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">PHP</span>
-          <span class="tech-tag">Reporting</span>
+          <span class="tech-tag">CodeIgniter 4</span><span class="tech-tag">MySQL</span>
+          <span class="tech-tag">PHP</span><span class="tech-tag">Reporting</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 12 Domain & Hosting -->
+      <div class="project-card reveal reveal-delay-2" data-category="web" style="--cat-color: var(--orange)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">dns</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Web</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Web</span></div>
         </div>
-        <div class="project-name">Domain &amp; Hosting Management Platform</div>
-        <div class="project-desc">
-          Internal platform module for managing domain registrations, hosting accounts, client
-          billing, and subscription renewals. Designed for web hosting resellers with automated
-          renewal reminders and client account dashboards.
-        </div>
+        <div class="project-name">Domain &amp; Hosting Management</div>
+        <div class="project-desc">Platform for managing domain registrations, hosting accounts, client billing, and subscription renewals. Designed for web hosting resellers with automated renewal reminders and client dashboards.</div>
         <div class="project-tech">
-          <span class="tech-tag">Laravel</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">Billing</span>
-          <span class="tech-tag">Client Portal</span>
+          <span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Billing</span><span class="tech-tag">Client Portal</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 13 Subscription -->
+      <div class="project-card reveal" data-category="web" style="--cat-color: var(--orange)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">autorenew</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Web</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Web</span></div>
         </div>
-        <div class="project-name">Subscription &amp; Service Management System</div>
-        <div class="project-desc">
-          Laravel 12 application supporting flexible commercial models: single purchases, recurring
-          subscriptions, service packages, add-ons, and super packages. Built for Eelam Innovations'
-          service delivery and client billing operations.
-        </div>
+        <div class="project-name">Subscription &amp; Service System</div>
+        <div class="project-desc">Laravel 12 application supporting flexible commercial models: single purchases, recurring subscriptions, service packages, add-ons, and super packages for Eelam Innovations' client billing operations.</div>
         <div class="project-tech">
-          <span class="tech-tag">Laravel 12</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">M-Pesa</span>
-          <span class="tech-tag">Subscriptions</span>
+          <span class="tech-tag">Laravel 12</span><span class="tech-tag">MySQL</span>
+          <span class="tech-tag">M-Pesa</span><span class="tech-tag">Subscriptions</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 14 Akai Goat Farm -->
+      <div class="project-card reveal reveal-delay-1" data-category="android" style="--cat-color: var(--green)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">agriculture</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-mobile">Android</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Android</span></div>
         </div>
         <div class="project-name">Akai Goat Farm</div>
-        <div class="project-desc">
-          Farm management Android app for Kenyan smallholder goat farmers. Features animal tagging,
-          breeding records, treatment history, and health tracking. Includes bug fixes for treatments
-          sync, tag numbering, and breeding record crashes.
-        </div>
+        <div class="project-desc">Farm management Android app for Kenyan smallholder goat farmers. Features animal tagging, breeding records, treatment history, and health tracking. Includes bug fixes for treatments sync, tag numbering, and record crashes.</div>
         <div class="project-tech">
-          <span class="tech-tag">Kotlin</span>
-          <span class="tech-tag">Jetpack Compose</span>
-          <span class="tech-tag">Room DB</span>
-          <span class="tech-tag">Android</span>
+          <span class="tech-tag">Kotlin</span><span class="tech-tag">Jetpack Compose</span>
+          <span class="tech-tag">Room DB</span><span class="tech-tag">Android</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 15 Weather Station -->
+      <div class="project-card reveal reveal-delay-2" data-category="gis" style="--cat-color: var(--cyan)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">device_thermostat</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-gis">Field Tech</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Field Tech</span></div>
         </div>
-        <div class="project-name">Weather Station Monitoring Network</div>
-        <div class="project-desc">
-          Installation, maintenance, and data management for a network of meteorological stations
-          across Kenya's ASAL counties. Covers data collection workflows, calibration, and
-          integration into environmental research reporting pipelines.
-        </div>
+        <div class="project-name">Weather Station Network</div>
+        <div class="project-desc">Installation, maintenance, and data management for a meteorological station network across Kenya's ASAL counties. Covers data collection workflows, calibration, and integration into environmental research pipelines.</div>
         <div class="project-tech">
-          <span class="tech-tag">IoT Sensors</span>
-          <span class="tech-tag">Data Logging</span>
-          <span class="tech-tag">GIS</span>
-          <span class="tech-tag">Field Tech</span>
+          <span class="tech-tag">IoT Sensors</span><span class="tech-tag">Data Logging</span>
+          <span class="tech-tag">GIS</span><span class="tech-tag">Field Tech</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 16 River Level -->
+      <div class="project-card reveal" data-category="gis" style="--cat-color: var(--cyan)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">waves</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-gis">Field Tech</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Field Tech</span></div>
         </div>
-        <div class="project-name">River Level Monitoring System</div>
-        <div class="project-desc">
-          Deployment and management of river level data loggers across the Ewaso Ng'iro North
-          Catchment. Handles data retrieval, quality control, and reporting for water resource
-          monitoring under the SEI &amp; CETRAD Water-Energy-Food Nexus project.
-        </div>
+        <div class="project-name">River Level Monitoring</div>
+        <div class="project-desc">Deployment and management of river level data loggers across the Ewaso Ng'iro North Catchment. Data retrieval, quality control, and reporting for water resource monitoring under the SEI &amp; CETRAD WEF Nexus project.</div>
         <div class="project-tech">
-          <span class="tech-tag">Data Loggers</span>
-          <span class="tech-tag">Hydrology</span>
-          <span class="tech-tag">PostgreSQL</span>
-          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">Data Loggers</span><span class="tech-tag">Hydrology</span>
+          <span class="tech-tag">PostgreSQL</span><span class="tech-tag">Power BI</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 17 HEC -->
+      <div class="project-card reveal reveal-delay-1" data-category="gis" style="--cat-color: var(--cyan)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">pets</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-gis">GIS</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">GIS</span></div>
         </div>
         <div class="project-name">HEC Incident Reporting System</div>
-        <div class="project-desc">
-          Human-Elephant Conflict incident reporting and mapping system developed for conservation
-          stakeholder workshops. Enables field teams to log, locate, and analyze conflict incidents
-          across community and wildlife boundary zones.
-        </div>
+        <div class="project-desc">Human-Elephant Conflict incident reporting and mapping system for conservation stakeholder workshops. Enables field teams to log, locate, and analyze conflict incidents across community and wildlife boundary zones.</div>
         <div class="project-tech">
-          <span class="tech-tag">GIS</span>
-          <span class="tech-tag">ODK</span>
-          <span class="tech-tag">Mapping</span>
-          <span class="tech-tag">Conservation</span>
+          <span class="tech-tag">GIS</span><span class="tech-tag">ODK</span>
+          <span class="tech-tag">Mapping</span><span class="tech-tag">Conservation</span>
         </div>
       </div>
 
-      <div class="project-card">
+      <!-- 18 Jumia Tracker -->
+      <div class="project-card reveal reveal-delay-2" data-category="tool" style="--cat-color: var(--yellow)">
         <div class="project-header">
           <div class="project-icon"><span class="material-symbols-outlined">monitoring</span></div>
-          <div class="project-badges">
-            <span class="project-category cat-web">Tool</span>
-          </div>
+          <div class="project-meta"><span class="project-badge">Tool</span></div>
         </div>
         <div class="project-name">Jumia Price Tracker</div>
-        <div class="project-desc">
-          Personal utility tool that monitors product prices on Jumia Kenya, tracks historical
-          price movements, and analyzes sales data. Built to identify deals and understand
-          e-commerce pricing patterns for informed purchasing decisions.
-        </div>
+        <div class="project-desc">Personal utility that monitors product prices on Jumia Kenya, tracks historical price movements, and analyzes sales data. Built to identify deals and understand e-commerce pricing patterns for informed decisions.</div>
         <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Web Scraping</span>
-          <span class="tech-tag">Data Analysis</span>
-          <span class="tech-tag">Automation</span>
+          <span class="tech-tag">Python</span><span class="tech-tag">Web Scraping</span>
+          <span class="tech-tag">Data Analysis</span><span class="tech-tag">Automation</span>
         </div>
       </div>
 
@@ -1162,65 +1275,70 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <div class="section-header">
-      <p class="section-tag">// get in touch</p>
-      <h2 class="section-title">Let's <span>Connect</span></h2>
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Get in touch</p>
+      <h2 class="section-title">Let's <span class="grad">Connect</span></h2>
+      <p class="section-lead">Open to freelance projects, consulting, and collaborations in water tech, GIS, and mobile development.</p>
     </div>
     <div class="contact-grid">
       <div>
         <p class="contact-intro">
-          I'm open to freelance projects, consulting engagements, and collaborations &mdash;
-          especially in water tech, environmental data systems, and mobile app development in Kenya.
+          Based in Kenya, available for remote and on-site engagements across East Africa.
           Feel free to reach out via any of the channels below.
         </p>
         <div class="contact-links">
-          <a href="mailto:framutuma@gmail.com" class="contact-link-item">
-            <span class="contact-link-icon"><span class="material-symbols-outlined">email</span></span>
+          <a href="mailto:framutuma@gmail.com" class="contact-item reveal">
+            <div class="contact-item-icon"><span class="material-symbols-outlined">email</span></div>
             <div>
-              <div class="contact-link-label">Email</div>
-              <div class="contact-link-value">framutuma@gmail.com</div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">framutuma@gmail.com</div>
             </div>
           </a>
-          <a href="https://www.linkedin.com/in/framutuma/" class="contact-link-item" target="_blank" rel="noopener">
-            <span class="contact-link-icon"><span class="material-symbols-outlined">work</span></span>
+          <a href="https://www.linkedin.com/in/framutuma/" class="contact-item reveal reveal-delay-1" target="_blank" rel="noopener">
+            <div class="contact-item-icon"><span class="material-symbols-outlined">work</span></div>
             <div>
-              <div class="contact-link-label">LinkedIn</div>
-              <div class="contact-link-value">linkedin.com/in/framutuma</div>
+              <div class="contact-item-label">LinkedIn</div>
+              <div class="contact-item-value">linkedin.com/in/framutuma</div>
             </div>
           </a>
-          <a href="https://github.com/promutuma" class="contact-link-item" target="_blank" rel="noopener">
-            <span class="contact-link-icon"><span class="material-symbols-outlined">code</span></span>
+          <a href="https://github.com/promutuma" class="contact-item reveal reveal-delay-2" target="_blank" rel="noopener">
+            <div class="contact-item-icon"><span class="material-symbols-outlined">code</span></div>
             <div>
-              <div class="contact-link-label">GitHub</div>
-              <div class="contact-link-value">github.com/promutuma</div>
+              <div class="contact-item-label">GitHub</div>
+              <div class="contact-item-value">github.com/promutuma</div>
             </div>
           </a>
-          <a href="https://twitter.com/framutuma" class="contact-link-item" target="_blank" rel="noopener">
-            <span class="contact-link-icon"><span class="material-symbols-outlined">alternate_email</span></span>
+          <a href="https://twitter.com/framutuma" class="contact-item reveal reveal-delay-3" target="_blank" rel="noopener">
+            <div class="contact-item-icon"><span class="material-symbols-outlined">alternate_email</span></div>
             <div>
-              <div class="contact-link-label">Twitter / X</div>
-              <div class="contact-link-value">@framutuma</div>
+              <div class="contact-item-label">Twitter / X</div>
+              <div class="contact-item-value">@framutuma</div>
             </div>
           </a>
         </div>
       </div>
-      <div>
-        <div class="availability">
-          <div class="avail-header">
-            <span class="availability-dot"></span>
+      <div class="reveal reveal-delay-2">
+        <div class="availability-card">
+          <div class="avail-row">
+            <span class="avail-dot"></span>
             Available for new projects
           </div>
-          <p>
-            Currently based in Kenya. Available for remote and on-site engagements across East Africa.
-            Specializing in Laravel backends, Android apps, and GIS data systems.
-          </p>
+          <p>Specializing in Laravel backends, Android apps, and GIS data systems. Available for remote and on-site work across East Africa.</p>
         </div>
-        <p class="contact-side-title">Find me on</p>
-        <div class="social-row">
-          <a href="https://github.com/promutuma" class="social-btn" target="_blank" rel="noopener"><span class="material-symbols-outlined" style="font-size:16px">code</span> GitHub</a>
-          <a href="https://www.linkedin.com/in/framutuma/" class="social-btn" target="_blank" rel="noopener"><span class="material-symbols-outlined" style="font-size:16px">work</span> LinkedIn</a>
-          <a href="https://twitter.com/framutuma" class="social-btn" target="_blank" rel="noopener"><span class="material-symbols-outlined" style="font-size:16px">alternate_email</span> Twitter</a>
-          <a href="https://eelam.co.ke" class="social-btn" target="_blank" rel="noopener"><span class="material-symbols-outlined" style="font-size:16px">language</span> Eelam.co.ke</a>
+        <p class="contact-right-title">Find me on</p>
+        <div class="social-grid">
+          <a href="https://github.com/promutuma" class="social-btn" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">code</span> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/framutuma/" class="social-btn" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">work</span> LinkedIn
+          </a>
+          <a href="https://twitter.com/framutuma" class="social-btn" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">alternate_email</span> Twitter
+          </a>
+          <a href="https://eelam.co.ke" class="social-btn" target="_blank" rel="noopener">
+            <span class="material-symbols-outlined">language</span> Eelam.co.ke
+          </a>
         </div>
       </div>
     </div>
@@ -1231,7 +1349,7 @@
 <footer>
   <div class="footer-inner">
     <span class="footer-logo">Franklin Mutuma</span>
-    <span class="footer-copy">&copy; 2026 &middot; Built with HTML &amp; CSS &middot; Hosted on GitHub Pages</span>
+    <span class="footer-copy">&copy; 2026 &middot; Built with HTML &amp; CSS &middot; GitHub Pages</span>
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -1242,11 +1360,74 @@
 </footer>
 
 <script>
-  var btn = document.getElementById('menuBtn');
-  var links = document.getElementById('navLinks');
-  btn.addEventListener('click', function () { links.classList.toggle('open'); });
+  /* ── nav ── */
+  var menuBtn = document.getElementById('menuBtn');
+  var navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', function () { navLinks.classList.toggle('open'); });
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function () { links.classList.remove('open'); });
+    a.addEventListener('click', function () { navLinks.classList.remove('open'); });
+  });
+
+  /* ── scroll reveal ── */
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(function (el) {
+    revealObserver.observe(el);
+  });
+
+  /* ── stat counter ── */
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var duration = 1200;
+    var start = performance.now();
+    function step(now) {
+      var progress = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-num[data-target]').forEach(function (el) {
+    counterObserver.observe(el);
+  });
+
+  /* ── project filter ── */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = btn.getAttribute('data-filter');
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      projectCards.forEach(function (card) {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
   });
 </script>
 
